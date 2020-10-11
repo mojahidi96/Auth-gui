@@ -1,0 +1,35 @@
+<app-notification [apiResponse]="loginResponse"></app-notification>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 card mt-4">
+            <h1 class="text-center mt-4">Login</h1>
+            <form [formGroup]="loginForm" class="card-body" (ngSubmit)="onSubmit()">
+                <div class="form-group"><label for="username">Username</label>
+                    <input type="text" id="username" class="form-control" formControlName="username"
+                        placeholder="Enter username"
+                        [ngClass]="{'is-invalid':loginControls.username?.dirty && loginControls.username.hasError('required')}">
+                    <div class="invalid-feedback">Username is required</div>
+                </div>
+                <div class="form-group"><label for="password">Password</label>
+                    <input type="password" id="password" class="form-control" formControlName="password"
+                        placeholder="Enter password"
+                        [ngClass]="{'is-invalid':loginControls.password.dirty && loginControls.password.hasError('required')}">
+                    <div class="invalid-feedback">Password is required</div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6">
+                        <a routerLink="/register" class="alert-link text-muted">Register user | </a>
+                        <a routerLink="/updatepassword" class="alert-link text-muted">Forgot password</a>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-danger float-right">Login</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link">{{userInfo?.firstName}}</a>
+                </li>
+            </ul>
+            <a class="navbar-brand">
+            </a>
+            <div class="btn-group" dropdown>
+                <a id="button-basic" dropdownToggle class="dropdown-toggle text-white" aria-controls="dropdown-basic">
+                    <img class="rounded-circle border" style="height: 2rem;width: 2rem;"
+                        [src]="userInfo?.profileImg?userInfo?.profileImg:'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS6C2xp89cOWe2RiYIuxgUHW4562VCjhyTSjQ&usqp=CAU'"
+                        [alt]="userInfo?.firstName+' '+userInfo?.lastName">
+                </a>
+                <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+                    <li role="menuitem"><a class="dropdown-item" href="#">{{userInfo?.firstName}} {{userInfo?.lastName}}</a></li>
+                    <li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>
+                    <li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+</nav>
+<div class="container mt-4">
+
+    <table class="table table-striped" aria-describedby="userstable">
+        <thead class="thead-dark">
+            <tr>
+                <th *ngFor="let column of columns" scope="col">{{column.title}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td *ngFor="let column of columns">{{user[column.fieldName]}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

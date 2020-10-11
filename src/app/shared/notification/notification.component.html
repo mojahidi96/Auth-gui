@@ -1,0 +1,5 @@
+<div class="container mt-4" *ngIf="apiResponse">
+    <div class="alert border"
+        [ngClass]="apiResponse['success']?'alert-success border-success':'alert-danger border-danger'">
+        {{apiResponse['message']}}</div>
+</div>

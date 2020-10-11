@@ -1,0 +1,245 @@
+<app-notification [apiResponse]="registerApiResponse"></app-notification>
+<div class="container card mt-4">
+    <div class="card-body">
+        <form [formGroup]="registerForm" class="mt-4 mb-4" (ngSubmit)="onSubmit()">
+            <h1 class="text-center">Register</h1>
+            <div class="form-row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="firstName">First name</label>
+                        <input type="text" id="firstName" class="form-control" formControlName="firstName"
+                            placeholder="Enter first name"
+                            [ngClass]="{'is-invalid': formControls.firstName?.dirty && formControls.firstName?.errors }">
+                        <div *ngIf="formControls.firstName.hasError('required')" class="invalid-feedback">
+                            First name is required</div>
+                        <div *ngIf="formControls.firstName.hasError('pattern')" class="invalid-feedback">
+                            First name should only have text</div>
+                        <div class="invalid-feedback" *ngIf="formControls.firstName.hasError('maxlength')">First name
+                            should not exceed 25 char length</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="lastName">Last name</label>
+                        <input type="text" id="lastName" class="form-control" formControlName="lastName"
+                            placeholder="Enter last name"
+                            [ngClass]="{'is-invalid':formControls.lastName?.dirty && formControls.lastName?.errors}">
+                        <div *ngIf="formControls.lastName.errors?.required" class="invalid-feedback">Last
+                            name is required</div>
+                        <div *ngIf="formControls.lastName.hasError('pattern')" class="invalid-feedback">
+                            Last name should only have text</div>
+                        <div class="invalid-feedback" *ngIf="formControls.lastName.hasError('maxlength')">Last name
+                            should not exceed 25 char length</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" class="form-control" formControlName="username"
+                            placeholder="Enter username"
+                            [ngClass]="{'is-invalid' :formControls.username?.dirty && formControls.username?.errors}">
+                        <div *ngIf="formControls.username.errors?.required" class="invalid-feedback">
+                            Username is required</div>
+                    </div>
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" class="form-control" formControlName="email"
+                        placeholder="Enter email address"
+                        [ngClass]="{'is-invalid': formControls.email?.dirty && formControls.email?.errors}">
+                    <div *ngIf="formControls.email.errors?.required" class="invalid-feedback">Email is
+                        required</div>
+                    <div *ngIf="formControls.email.hasError('pattern')" class="invalid-feedback">
+                        Invalid email
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" formControlName="password"
+                            placeholder="Enter password"
+                            [ngClass]="{'is-invalid':(formControls.password?.dirty && formControls.password?.errors), 'is-valid':(formControls.password?.dirty && !formControls.password?.errors)}">
+                        <div class="invalid-feedback"
+                            [ngClass]="{'text-success':!(formControls.password.hasError('required'))}">
+                            <svg *ngIf="(formControls.password.hasError('required'))" width="1em" height="1em"
+                                viewBox="0 0 16 16" class="bi bi-x-circle-fill" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+                            </svg>
+                            <svg *ngIf="!(formControls.password.hasError('required'))" width="1em" height="1em"
+                                viewBox="0 0 16 16" class="bi bi-check-circle-fill" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                            </svg>
+                            Password is required</div>
+                        <div class="invalid-feedback"
+                            [ngClass]="{'text-success':!(formControls.password.hasError('hasCapitalCase') || formControls.password.hasError('required'))}">
+                            <svg *ngIf="(formControls.password.hasError('hasCapitalCase')|| formControls.password.hasError('required'))"
+                                width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x-circle-fill"
+                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+                            </svg>
+                            <svg *ngIf="!(
+                            formControls.password.hasError('hasCapitalCase')|| formControls.password.hasError('required'))"
+                                width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-check-circle-fill"
+                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                            </svg>
+                            At least one uppercase letter</div>
+                        <div class="invalid-feedback"
+                            [ngClass]="{'text-success':!(formControls.password.hasError('hasSmallCase')|| formControls.password.hasError('required'))}">
+                            <svg *ngIf="(
+                            formControls.password.hasError('hasSmallCase')|| formControls.password.hasError('required'))"
+                                width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x-circle-fill"
+                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+                            </svg>
+                            <svg *ngIf="!(
+                            formControls.password.hasError('hasSmallCase')|| formControls.password.hasError('required'))"
+                                width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-check-circle-fill"
+                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                            </svg>
+                            At least one lowercase letter</div>
+                        <div class="invalid-feedback"
+                            [ngClass]="{'text-success':!( formControls.password.hasError('hasNumber') || formControls.password.hasError('required'))}">
+                            <svg *ngIf="(
+                            formControls.password.hasError('hasNumber') || formControls.password.hasError('required'))"
+                                width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x-circle-fill"
+                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+                            </svg>
+                            <svg *ngIf="!(
+                            formControls.password.hasError('hasNumber') || formControls.password.hasError('required'))"
+                                width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-check-circle-fill"
+                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                            </svg>
+                            At least one number</div>
+                        <div class="invalid-feedback"
+                            [ngClass]="{'text-success':!( formControls.password.hasError('hasSpecialChar')|| formControls.password.hasError('required'))}">
+                            <svg *ngIf="(
+                            formControls.password.hasError('hasSpecialChar')|| formControls.password.hasError('required'))"
+                                width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x-circle-fill"
+                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+                            </svg>
+                            <svg *ngIf="!(
+                            formControls.password.hasError('hasSpecialChar')|| formControls.password.hasError('required'))"
+                                width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-check-circle-fill"
+                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                            </svg>
+                            At least one special character</div>
+                        <div class="invalid-feedback"
+                            [ngClass]="{'text-success':!(
+                            formControls.password.hasError('minlength') || formControls.password.hasError('required'))}">
+                            <svg *ngIf="(
+                                formControls.password.hasError('minlength') || formControls.password.hasError('required'))"
+                                width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x-circle-fill"
+                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+                            </svg>
+                            <svg *ngIf="!(
+                                formControls.password.hasError('minlength') || formControls.password.hasError('required'))"
+                                width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-check-circle-fill"
+                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                            </svg>
+                            Password should be minimum eight characters</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="password">Confirm password</label>
+                        <input type="password" class="form-control" formControlName="cnfPassword"
+                            placeholder="Enter confirm password"
+                            [ngClass]="{'is-invalid': formControls.cnfPassword?.dirty && formControls.cnfPassword.errors , 'is-valid':(formControls.cnfPassword?.dirty && !formControls.cnfPassword?.errors)}">
+                        <div class="invalid-feedback"
+                            *ngIf="formControls.cnfPassword?.dirty && formControls.cnfPassword.errors?.required">
+                            Confirm password is required</div>
+                        <div class="invalid-feedback"
+                            *ngIf="formControls.cnfPassword?.dirty && formControls.cnfPassword.errors?.NoPassswordMatch">
+                            Confirm password
+                            didn't match</div>
+                        <!-- , at least one uppercase letter, one lowercase letter and one number` -->
+                    </div>
+                </div>
+            </div>
+
+            <fieldset formGroupName=address class="border border-secondary p-3 rounded">
+                <legend class="col-form-label w-auto">Address</legend>
+                <div class="form-group">
+                    <label for="address">Street</label>
+                    <input type="text" name="" id="street" class="form-control" formControlName="street"
+                        placeholder="House no., street, locality..."
+                        [ngClass]="{'is-invalid':addressControls['street']?.dirty && addressControls['street']?.errors}">
+                    <div *ngIf="addressControls['street'].errors?.required" class="invalid-feedback">Street required
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input type="text" id="city" class="form-control" formControlName="city"
+                                placeholder="Enter city"
+                                [ngClass]="{'is-invalid' : addressControls['city']?.dirty && addressControls['city']?.errors}">
+                            <div *ngIf="addressControls['city']?.dirty && addressControls['city']?.errors?.required"
+                                class="invalid-feedback">City is required</div>
+                        </div>
+                    </div>
+                    <div class=" col-md-4">
+                        <div class="form-group">
+                            <label for="state">State</label>
+                            <input type="text" id="state" class="form-control" formControlName="state"
+                                placeholder="Enter state"
+                                [ngClass]="{'is-invalid': addressControls['state']?.dirty && addressControls['state']?.errors}">
+                            <div *ngIf="addressControls['state']?.dirty && addressControls['state']?.errors?.required"
+                                class="invalid-feedback">
+                                State is required</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group"><label for="zipcode">ZipCode</label>
+                            <input type="number" name="" id="zipcode" class="form-control" formControlName="zipcode"
+                                placeholder="Enter zip code"
+                                [ngClass]="{'is-invalid':addressControls['zipcode']?.dirty && addressControls['zipcode']?.errors}">
+                            <div *ngIf="addressControls['zipcode']?.dirty && addressControls['zipcode'].errors?.required"
+                                class="invalid-feedback">
+                                Zip code is required</div>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="form-row mt-3">
+                <div class="col-md-6">
+                    <div class="for-group">
+                        <button type="button" class="btn btn-primary" routerLink="/login">Cancel</button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="for-group float-right">
+                        <button type="submit" class="btn btn-danger">Register</button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
