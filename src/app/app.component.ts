@@ -10,13 +10,13 @@ const log = new LoggerService('AppComponent');
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  
+
   constructor() { }
 
   ngOnInit(): void {
     if (environment.production) {
       LoggerService.enableProduciton();
     }
-    log.info('Initialized AppComponent')
+    log.info('Initialized AppComponent');
   }
 }
