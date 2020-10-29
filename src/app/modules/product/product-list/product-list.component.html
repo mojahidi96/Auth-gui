@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row mt-4" *ngFor="let row of [1,2,3]">
+        <div class="col-sm-3" *ngFor="let col of [1,2,3,4]">
+            <div class="card">
+                <img class="card-img-top p-2"
+                    src="https://images-eu.ssl-images-amazon.com/images/I/41mPjjqqNnL._AC_US160_FMwebp_QL70_.jpg"
+                    alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <span class="text-danger font-weight-bold">{{10 | currency:"INR":"symbol"}}</span>
+                    <del class="text-secondary font-weight-light">{{15| currency:"INR":"symbol"}}</del>
+                    <star-rating></star-rating>
+                    <a class="btn btn-primary float-right">Add to cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
