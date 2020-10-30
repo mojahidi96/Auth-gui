@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
         }
       }, error => {
         logger.error("Error occured on api call", error);
-        this.loginResponse = error.error;
+        this.loginResponse = error.error.message ? error.error : error.message;
       })
     }
   }
