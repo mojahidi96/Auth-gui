@@ -1,0 +1,767 @@
+{
+    "ProductCatalogResponse": {
+        "ProductList": {
+            "product": [
+                {
+                    "partnerid": "12",
+                    "brandid": "11",
+                    "categoryid": "11",
+                    "itemCode": "A1921",
+                    "name": "Apple iPhone XR",
+                    "shortDescription": "All-new Liquid Retina display - the most advanced LCD in the industry. The smartest, most powerful chip in a smartphone. ",
+                    "price": "749.99",
+                    "printedPrice": "800.99",
+                    "rating": "4",
+                    "taxCode": "",
+                    "features": [
+                        {
+                            "name": "Description",
+                            "type": "DESC",
+                            "description": "All-new Liquid Retina display - the most advanced LCD in the industry. The smartest, most powerful chip in a smartphone. And a breakthrough camera system. iPhone XR. It s beautiful any way you look at it. Comes in Product Red, Yellow, White, Coral, Black, and Blue colors (subject to availability).",
+                            "number": 0,
+                            "image": ""
+                        },
+                        {
+                            "name": "Technical Details",
+                            "type": "DESC",
+                            "description": "6.1-inch Liquid Retina display (LCD); IP67 water and dust resistant (maximum depth of 1 meter up to 30 minutes); 12MP camera with OIS and 7MP TrueDepth front camera—Portrait mode, Portrait Lighting, Depth Control, and Smart HDR; Face ID for secure authentication and Apple Pay; A12 Bionic with next-generation Neural Engine; Wireless charging—works with Qi chargers; iOS 12 with Memoji, Screen Time, Siri Shortcuts, and Group FaceTime",
+                            "number": 0,
+                            "image": ""
+                        },
+                        {
+                            "name": "Requirements",
+                            "type": "DESC",
+                            "description": "Usage Time: 25hrs; Camera: 12MP; Weight: 6.84 oz; Width: 2.98 in; Height: 5.94 in; Depth: .33 in",
+                            "number": 0,
+                            "image": ""
+                        }
+                    ],
+                    "images": {
+                        "small_image": "https://s3.amazonaws.com/media.phobio.com/product_images/small-apple-imac-core-2-duo-28ghz-24-al-early-2008-320gb.jpg",
+                        "large_image": "https://s3.amazonaws.com/media.phobio.com/product_images/large-apple-imac-core-2-duo-28ghz-24-al-early-2008-320gb.jpg"
+                    },
+                    "customizations": [
+                        {
+                            "name": "Color",
+                            "type": "SELECTION",
+                            "choices": [
+                                {
+                                    "selection": "Red",
+                                    "image": "22b46b7a-fafb-4bd7-b23d-67b6cb8afc05",
+                                    "thumbnail": "",
+                                    "color": "#ff0000",
+                                    "price": ""
+                                },
+                                {
+                                    "selection": "White",
+                                    "image": "6f614953-1432-4922-8ef5-ae17785c896e",
+                                    "thumbnail": "",
+                                    "color": "#ffffff",
+                                    "price": ""
+                                },
+                                {
+                                    "selection": "Yellow",
+                                    "image": "6d8a3140-d1ca-4b1f-ba4e-31f76576de5a",
+                                    "thumbnail": "",
+                                    "color": "#ffd700",
+                                    "price": ""
+                                },
+                                {
+                                    "selection": "Coral",
+                                    "image": "8bb9be9e-9166-47ec-8c90-130d57206a8b",
+                                    "thumbnail": "",
+                                    "color": "#ff7f50",
+                                    "price": ""
+                                },
+                                {
+                                    "selection": "Blue",
+                                    "image": "4f8330e6-06ab-4a25-8c25-be3a13b17909",
+                                    "thumbnail": "",
+                                    "color": "#0040ff",
+                                    "price": ""
+                                },
+                                {
+                                    "selection": "Black",
+                                    "image": "c6906bce-16f5-4f61-82dc-2cb9c96e04f5",
+                                    "thumbnail": "",
+                                    "color": "#000000",
+                                    "price": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Variant",
+                            "type": "SELECTION",
+                            "choices": [
+                                {
+                                    "selection": "64GB",
+                                    "image": "",
+                                    "thumbnail": "",
+                                    "color": "",
+                                    "price": "749.99"
+                                },
+                                {
+                                    "selection": "128GB",
+                                    "image": "",
+                                    "thumbnail": "",
+                                    "color": "",
+                                    "price": "799.99"
+                                },
+                                {
+                                    "selection": "256GB",
+                                    "image": "",
+                                    "thumbnail": "",
+                                    "color": "",
+                                    "price": "899.99"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "partnerid": "12",
+                    "brandid": "12",
+                    "categoryid": "11",
+                    "itemCode": "A1922",
+                    "name": "Samsung Galaxy Note9",
+                    "shortDescription": "Get things done with an all-day battery. Store more with 128GB or 512GB models.",
+                    "price": "999.99",
+                    "printedPrice": "1050.99",
+                    "rating": "1.5",
+                    "taxCode": "",
+                    "features": [
+                        {
+                            "name": "Description",
+                            "type": "DESC",
+                            "description": "Get things done with an all-day battery. Store more with 128GB or 512GB models. Stream and download faster with cutting-edge modem technology. Put your creativity on display with the new S Pen. And take brilliant shots with scene optimizer and flaw detection.",
+                            "number": 0,
+                            "image": ""
+                        },
+                        {
+                            "name": "Technical Details",
+                            "type": "DESC",
+                            "description": "All-day battery; Store more, delete less; Largest Infinity Display ever; Mightier S Pen",
+                            "number": 0,
+                            "image": ""
+                        },
+                        {
+                            "name": "Requirements",
+                            "type": "DESC",
+                            "description": "Usage Time: 38hrs; Camera: 12MP; Weight: 7.09 oz; Width: 3.01 in; Height: 6.37 in; Depth: .35 in",
+                            "number": 0,
+                            "image": ""
+                        }
+                    ],
+                    "images": {
+                        "small_image": "https://s3.amazonaws.com/media.phobio.com/product_images/small-samsung-galaxy-note-7-att.jpg",
+                        "large_image": "https://s3.amazonaws.com/media.phobio.com/product_images/large-samsung-galaxy-note-7-att.jpg"
+                    },
+                    "customizations": [
+                        {
+                            "name": "Color",
+                            "type": "SELECTION",
+                            "choices": [
+                                {
+                                    "selection": "Ocean Blue",
+                                    "image": "349631ae-d0b2-4d08-98b0-0c581be6e3f6",
+                                    "thumbnail": "",
+                                    "color": "#0080ff",
+                                    "price": ""
+                                },
+                                {
+                                    "selection": "Lavender Purple",
+                                    "image": "06ddd167-7073-4997-8e89-136e5c2de9c9",
+                                    "thumbnail": "",
+                                    "color": "#967bb6",
+                                    "price": ""
+                                },
+                                {
+                                    "selection": "Midnight Black",
+                                    "image": "e9c7f4c3-ddbd-41b3-a599-bcf9998d1406",
+                                    "thumbnail": "",
+                                    "color": "#000000",
+                                    "price": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Variant",
+                            "type": "SELECTION",
+                            "choices": [
+                                {
+                                    "selection": "128GB",
+                                    "image": "",
+                                    "thumbnail": "",
+                                    "color": "",
+                                    "price": "999.99"
+                                },
+                                {
+                                    "selection": "512GB",
+                                    "image": "",
+                                    "thumbnail": "",
+                                    "color": "",
+                                    "price": "1249.99"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "partnerid": "11",
+                    "brandid": "12",
+                    "categoryid": "11",
+                    "itemCode": "G965U",
+                    "name": "Samsung Galaxy S9",
+                    "shortDescription": "The new Samsung Galaxy S9, on the best network. A powerful camera that can record in super slow-mo and capture 4k video in true-to-life detail.",
+                    "price": "792.00",
+                    "printedPrice": "810.99",
+                    "rating": 5.0,
+                    "taxCode": "",
+                    "features": [
+                        {
+                            "name": "Description",
+                            "type": "DESC",
+                            "description": "The new Samsung Galaxy S9, on the best network. A powerful camera that can record in super slow-mo and capture 4k video in true-to-life detail. Stay entertained on an edge-to-edge Infinity Display. Translate languages with Bixby¹ and unlock your phone using advanced facial recognition. Experience the next evolution of the Samsung Galaxy. Samsung Galaxy S9 comes in midnight black, lilac purple and coral blue colors (subject to availability",
+                            "number": 0,
+                            "image": ""
+                        },
+                        {
+                            "name": "Technical Details",
+                            "type": "DESC",
+                            "description": "Built for speed; Radical 960 FPS super slow-mo captures up to 4 times as many frames per second; Infinity display - expanded device screen; Fun and useful AR",
+                            "number": 0,
+                            "image": ""
+                        },
+                        {
+                            "name": "Requirements",
+                            "type": "DESC",
+                            "description": "Usage Time: 27hrs; Camera: 12MP; Weight: 5.7 oz; Width: 2.7 in; Height: 5.8 in",
+                            "number": 0,
+                            "image": ""
+                        }
+                    ],
+                    "images": {
+                        "small_image": "https://s3.amazonaws.com/media.phobio.com/product_images/small-samsung-galaxy-note-7-att.jpg",
+                        "large_image": "https://s3.amazonaws.com/media.phobio.com/product_images/large-samsung-galaxy-note-7-att.jpg"
+                    },
+                    "customizations": [
+                        {
+                            "name": "Color",
+                            "type": "SELECTION",
+                            "choices": [
+                                {
+                                    "selection": "Lilac Purple",
+                                    "image": "9ac90173-cbec-4f62-bf77-025a4b0e2afc",
+                                    "thumbnail": "",
+                                    "color": "#967bb6",
+                                    "price": ""
+                                },
+                                {
+                                    "selection": "Coral Blue",
+                                    "image": "5d61063c-0c00-42e6-881f-fe20c4fe1c89",
+                                    "thumbnail": "",
+                                    "color": "#0080ff",
+                                    "price": ""
+                                },
+                                {
+                                    "selection": "Midnight Black",
+                                    "image": "dced0120-ec17-43d4-a45a-91c9bde752cc",
+                                    "thumbnail": "",
+                                    "color": "#000000",
+                                    "price": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Variant",
+                            "type": "SELECTION",
+                            "choices": [
+                                {
+                                    "selection": "64GB",
+                                    "image": "",
+                                    "thumbnail": "",
+                                    "color": "",
+                                    "price": "792.00"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "partnerid": "11",
+                    "brandid": "11",
+                    "categoryid": "11",
+                    "itemCode": "A1923",
+                    "name": "Apple iPhone X",
+                    "shortDescription": "iPhone X features a new all-screen design. Face ID, which makes your face your password. And the most powerful and smartest chip ever in a smartphone.",
+                    "price": "899.99",
+                    "printedPrice": "915.99",
+                    "rating": 4.5,
+                    "taxCode": "",
+                    "features": [
+                        {
+                            "name": "Description",
+                            "type": "DESC",
+                            "description": "iPhone X features a new all-screen design. Face ID, which makes your face your password. And the most powerful and smartest chip ever in a smartphone. Verizon is your destination for the hottest phones like the Apple iPhone X, all on the nation's most reliable 4G LTE network.",
+                            "number": 0,
+                            "image": ""
+                        },
+                        {
+                            "name": "Technical Details",
+                            "type": "DESC",
+                            "description": "Design and Display.  It's All Screen; TrueDepthCamera; Wireless Charging; Face ID for secure authentication and Apple Pay.",
+                            "number": 0,
+                            "image": ""
+                        },
+                        {
+                            "name": "Requirements",
+                            "type": "DESC",
+                            "description": "Usage Time: 12hrs; Camera: 12MP; Weight: 6.14 oz; Width: 2.79 in; Height: 5.65 in",
+                            "number": 0,
+                            "image": ""
+                        }
+                    ],
+                    "images": {
+                        "small_image": "https://s3.amazonaws.com/media.phobio.com/product_images/small-apple-imac-core-2-duo-20ghz-20-al-2007-al-250gb.jpg",
+                        "large_image": "https://s3.amazonaws.com/media.phobio.com/product_images/large-apple-imac-core-2-duo-20ghz-20-al-2007-al-250gb.jpg"
+                    },
+                    "customizations": [
+                        {
+                            "name": "Color",
+                            "type": "SELECTION",
+                            "choices": [
+                                {
+                                    "selection": "Silver",
+                                    "image": "f85109c3-f281-45bd-bc28-d480d214a4c3",
+                                    "thumbnail": "",
+                                    "color": "#e6e6e6",
+                                    "price": ""
+                                },
+                                {
+                                    "selection": "Space Gray",
+                                    "image": "55912723-85ff-4f25-b927-e638ad92d191",
+                                    "thumbnail": "",
+                                    "color": "#808080",
+                                    "price": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Variant",
+                            "type": "SELECTION",
+                            "choices": [
+                                {
+                                    "selection": "64GB",
+                                    "image": "",
+                                    "thumbnail": "",
+                                    "color": "",
+                                    "price": "899.99"
+                                },
+                                {
+                                    "selection": "256GB",
+                                    "image": "",
+                                    "thumbnail": "",
+                                    "color": "",
+                                    "price": "1049.99"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "partnerid": "13",
+                    "brandid": "11",
+                    "categoryid": "11",
+                    "itemCode": "A1933",
+                    "name": "Apple iPhone XS",
+                    "shortDescription": "The smartest, most powerful chip in a smartphone.",
+                    "price": "999.99",
+                    "printedPrice": "1050.99",
+                    "rating": 3.0,
+                    "taxCode": "",
+                    "features": [
+                        {
+                            "name": "Description",
+                            "type": "DESC",
+                            "description": "Welcome to the big screens. Super retina. Even faster Face ID. The smartest, most powerful chip in a smartphone. And a breakthrough dual-camera system. iPhone XS is everything you love about iPhone. Taken to the extreme. Comes in silver, gold and space gray colors (subject to availability). Get the most out of your iPhone XS with Verizon, the nation's largest and most reliable 4G LTE network.",
+                            "number": 0,
+                            "image": ""
+                        },
+                        {
+                            "name": "Technical Details",
+                            "type": "DESC",
+                            "description": "5.8 in Super Retina HD Display; 12MP Dual Cameras and 7MP TrueDepth Front Camera; A12 Bionic with next-generation Neural Engine",
+                            "number": 0,
+                            "image": ""
+                        },
+                        {
+                            "name": "Requirements",
+                            "type": "DESC",
+                            "description": "Usage Time: 20hrs; Camera: 12MP Dual; Weight: 6.24 oz; Width: 2.79 in; Height: 5.65 in; Depth: .3 in",
+                            "number": 0,
+                            "image": ""
+                        }
+                    ],
+                    "images": {
+                        "small_image": "https://s3.amazonaws.com/media.phobio.com/product_images/small-apple-imac-core-2-duo-20ghz-20-al-2007-al-250gb.jpg",
+                        "large_image": "https://s3.amazonaws.com/media.phobio.com/product_images/large-apple-imac-core-2-duo-20ghz-20-al-2007-al-250gb.jpg"
+                    },
+                    "customizations": [
+                        {
+                            "name": "Color",
+                            "type": "SELECTION",
+                            "choices": [
+                                {
+                                    "selection": "Gold",
+                                    "image": "3889c511-eca2-418e-82a4-609c304a7500",
+                                    "thumbnail": "",
+                                    "color": "#ffe9c8",
+                                    "price": ""
+                                },
+                                {
+                                    "selection": "Silver",
+                                    "image": "7c27d9aa-6d58-4389-8654-01a64f9fff26",
+                                    "thumbnail": "",
+                                    "color": "#e6e6e6",
+                                    "price": ""
+                                },
+                                {
+                                    "selection": "Space Gray",
+                                    "image": "7bbbf586-10c9-4b2a-8819-9b137a3b2dc6",
+                                    "thumbnail": "",
+                                    "color": "#808080",
+                                    "price": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Variant",
+                            "type": "SELECTION",
+                            "choices": [
+                                {
+                                    "selection": "64GB",
+                                    "image": "",
+                                    "thumbnail": "",
+                                    "color": "",
+                                    "price": "999.99"
+                                },
+                                {
+                                    "selection": "256GB",
+                                    "image": "",
+                                    "thumbnail": "",
+                                    "color": "",
+                                    "price": "1149.99"
+                                },
+                                {
+                                    "selection": "512GB",
+                                    "image": "",
+                                    "thumbnail": "",
+                                    "color": "",
+                                    "price": "1349.99"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "partnerid": "13",
+                    "brandid": "12",
+                    "categoryid": "11",
+                    "itemCode": "A1924",
+                    "name": "Samsung Galaxy S9+",
+                    "shortDescription": "The new Samsung Galaxy S9+, on the best network. A powerful dual camera that can record in super slow-mo and capture 4k video in true-to-life detail.",
+                    "price": "912.00",
+                    "printedPrice": "930.99",
+                    "rating": 1.5,
+                    "taxCode": "",
+                    "features": [
+                        {
+                            "name": "Description",
+                            "type": "DESC",
+                            "description": "The new Samsung Galaxy S9+, on the best network. A powerful dual camera that can record in super slow-mo and capture 4k video in true-to-life detail. Stay entertained on an edge-to-edge Infinity Display. Translate languages with Bixby¹ and unlock your phone using advanced facial recognition. Experience the next evolution of the Samsung Galaxy. Samsung Galaxy S9+ comes in midnight black, lilac purple and coral blue colors (subject to availability).",
+                            "number": 0,
+                            "image": ""
+                        },
+                        {
+                            "name": "Technical Details",
+                            "type": "DESC",
+                            "description": "All-day battery; Store more, delete less; Largest Infinity Display ever; Mightier S Pen",
+                            "number": 0,
+                            "image": ""
+                        },
+                        {
+                            "name": "Requirements",
+                            "type": "DESC",
+                            "description": "Usage Time: 31hrs; Camera: 12MP; Weight: 6.66 oz; Width: 2.9 in; Height: 6.22 in; Depth: .33 in",
+                            "number": 0,
+                            "image": ""
+                        }
+                    ],
+                    "images": {
+                        "small_image": "https://s3.amazonaws.com/media.phobio.com/product_images/small-default.jpg",
+                        "large_image": "https://s3.amazonaws.com/media.phobio.com/product_images/large-default.jpg"
+                    },
+                    "customizations": [
+                        {
+                            "name": "Color",
+                            "type": "SELECTION",
+                            "choices": [
+                                {
+                                    "selection": "Coral Blue",
+                                    "image": "5d61063c-0c00-42e6-881f-fe20c4fe1c89",
+                                    "thumbnail": "",
+                                    "color": "#0080ff",
+                                    "price": ""
+                                },
+                                {
+                                    "selection": "Lilac Purple",
+                                    "image": "9ac90173-cbec-4f62-bf77-025a4b0e2afc",
+                                    "thumbnail": "",
+                                    "color": "#967bb6",
+                                    "price": ""
+                                },
+                                {
+                                    "selection": "Midnight Black",
+                                    "image": "dced0120-ec17-43d4-a45a-91c9bde752cc",
+                                    "thumbnail": "",
+                                    "color": "#000000",
+                                    "price": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Variant",
+                            "type": "SELECTION",
+                            "choices": [
+                                {
+                                    "selection": "64GB",
+                                    "image": "",
+                                    "thumbnail": "",
+                                    "color": "",
+                                    "price": "912.00"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "partnerid": "14",
+                    "brandid": "14",
+                    "categoryid": "11",
+                    "itemCode": "MOTOE5",
+                    "name": "Moto E5 Play",
+                    "shortDescription": "Get all the speed you need with 2 GB of memory and a quad-core processor. moto e⁵ play. Everyday. Extraordinary",
+                    "price": "192.00",
+                    "printedPrice": "201.99",
+                    "rating": 0.5,
+                    "taxCode": "",
+                    "features": [
+                        {
+                            "name": "Description",
+                            "type": "DESC",
+                            "description": "Spending less doesn’t mean sacrificing the things you love. Just look at moto e⁵ play. With an advanced 8 MP autofocus camera, say goodbye to blurry photos once and for all. And your selfies have never looked better thanks to a front-facing flash. Go up to 24 hours on a single charge.1 Keep your phone protected with a water-repellent coating. Make room for more photos, songs, and videos with expandable storage",
+                            "number": 0,
+                            "image": ""
+                        },
+                        {
+                            "name": "Features",
+                            "type": "DESC",
+                            "description": "Android 8.1 (Oreo), LTE, Wi-Fi, GPS Navigation, Messaging, Apps & Social networking, Web, Mobile Hotspot, Calender, HD Voice, 8 MP Camera with autofocus, all-day battery, Expandable Storage, Fast performance",
+                            "number": 0,
+                            "image": ""
+                        },
+                        {
+                            "name": "Specs",
+                            "type": "DESC",
+                            "description": "Battery information : 2800mAh Li-Ion Polymer, Bluetooth profiles : A2DP, AVRCP, HFP, PBAP, MAP, HID, PAN, S3 Profile, HOGP, OPP, Dimensions : 5.95 x 2.91 x 0.35 in, Display : 5.2” HD(1280x720), Keyboard : Capacitive, Memory : Internal Memory: 2GB RAM / 16GB ROM, Operating system : Android™ 8.1 (Oreo), Processor : 1.4 GHz Qualcomm Snapdragon 427 with quad-core CPU, Talk time : 21.5 hours, Weight : 5.295",
+                            "number": 0,
+                            "image": ""
+                        }
+                    ],
+                    "images": {
+                        "small_image": "https://s3.amazonaws.com/media.phobio.com/product_images/small-apple-imac-core-2-duo-20ghz-20-al-2007-al-250gb.jpg",
+                        "large_image": "https://s3.amazonaws.com/media.phobio.com/product_images/large-apple-imac-core-2-duo-20ghz-20-al-2007-al-250gb.jpg"
+                    },
+                    "customizations": [
+                        {
+                            "name": "Color",
+                            "type": "SELECTION",
+                            "choices": [
+                                {
+                                    "selection": "Black",
+                                    "image": "129e08e0-8c3c-449f-94bc-cfacea981c89",
+                                    "thumbnail": "",
+                                    "color": "#000000",
+                                    "price": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Variant",
+                            "type": "SELECTION",
+                            "choices": [
+                                {
+                                    "selection": "16GB",
+                                    "image": "",
+                                    "thumbnail": "",
+                                    "color": "",
+                                    "price": "192.00"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "partnerid": "14",
+                    "brandid": "13",
+                    "categoryid": "11",
+                    "itemCode": "LGV30+",
+                    "name": "LG V30+",
+                    "shortDescription": "Achieve cinema-like status with the Mobile Cine camera, with a state-of-the-art glass lens that allows you to capture even the widest angles",
+                    "price": "360.00",
+                    "printedPrice": "377.99",
+                    "taxCode": "",
+                    "rating": 3.5,
+                    "features": [
+                        {
+                            "name": "Description",
+                            "type": "DESC",
+                            "description": "Customize the way you listen and stream music without compromising quality with MQA technology and a Hi-Fi Quad DAC. High Performance User Experience (HPUE) extends Sprint's 2.5 GHz coverage providing broader data coverage for faster data speeds in more places.",
+                            "number": 0,
+                            "image": ""
+                        },
+                        {
+                            "name": "Feature list",
+                            "type": "DESC",
+                            "description": "6.0 inch Quad HD + FullVision™ (2880 x 1440) gorilla glass display. 16MP/13MP dual rear cameras with normal & wide angles + 5MP front facing camera. Sprint Gigabit Class LTE Speed & 30% increase in LTE coverage with HPUE. Hi-Fi Streaming with Quad DAC. LG QuadPlay earbuds provide an incredibly comfortable and high-quality listening experience. 4 advanced unlock options for additional security: face or voice recognition, rear fingerprint sensor or knock code tapping patterns. IP68 water and dust resistant. USB Type-C charging port with Qualcomm Quick Charge 3.0 and faster wireless charging",
+                            "number": 0,
+                            "image": ""
+                        },
+                        {
+                            "name": "Specs",
+                            "type": "DESC",
+                            "description": "Talk time : Up to 26 hours. Processor : 2.3 GHz Snapdragon 835 Octa core processor. Weight : 5.57 oz. Operating system : Android 7.0 (Nougat). Memory : 4GB RAM/128GB ROM Supports up to 2TB external microSD card (not included). Keyboard : Capacitive Touch. Display : 6 inch Class QHD Plus FullVision POLED Gorilla Glass Display (2880x1440). Dimensions : 5.96” x 2.96” x 0.29”. Battery information : 3300 mAh Li-Polymer battery (embedded). Bluetooth profiles : 5.0: A2DP, AVRCP, DI, GAVDP, GOEP, HDP, HFP, HID, HSP, MAP. OPP, PAN, PBAP, SPP, HOGP, ScPP",
+                            "number": 0,
+                            "image": ""
+                        }
+                    ],
+                    "images": {
+                        "small_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTskYkKZO4w6qhkSdEuaWaxtby2aq8UVxENuw&usqp=CAU",
+                        "large_image": "https://m.media-amazon.com/images/I/61sPx22I6aL._AC_UY327_FMwebp_QL65_.jpg"
+                    },
+                    "customizations": [
+                        {
+                            "name": "Color",
+                            "type": "SELECTION",
+                            "choices": [
+                                {
+                                    "selection": "Black",
+                                    "image": "3faf98f9-004d-49be-b9d8-197e1b32cf8e",
+                                    "thumbnail": "",
+                                    "color": "#000000",
+                                    "price": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Variant",
+                            "type": "SELECTION",
+                            "choices": [
+                                {
+                                    "selection": "128GB",
+                                    "image": "",
+                                    "thumbnail": "",
+                                    "color": "",
+                                    "price": "360.00"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "fitlers": [
+            {
+                "name": "Carrier",
+                "filter": [
+                    {
+                        "name": "Verizon",
+                        "id": "11",
+                        "type": "partnerid",
+                        "image": ""
+                    },
+                    {
+                        "name": "AT&T",
+                        "id": "12",
+                        "type": "partnerid",
+                        "image": ""
+                    },
+                    {
+                        "name": "T-Mobile",
+                        "id": "13",
+                        "type": "partnerid",
+                        "image": ""
+                    },
+                    {
+                        "name": "Sprint",
+                        "id": "14",
+                        "type": "partnerid",
+                        "image": ""
+                    }
+                ]
+            },
+            {
+                "name": "Category",
+                "filter": [
+                    {
+                        "name": "Smart Phones",
+                        "id": "11",
+                        "type": "categoryid",
+                        "image": ""
+                    },
+                    {
+                        "name": "Cases",
+                        "id": "13",
+                        "type": "categoryid",
+                        "image": ""
+                    }
+                ]
+            },
+            {
+                "name": "Brand",
+                "filter": [
+                    {
+                        "name": "Apple",
+                        "id": "11",
+                        "type": "brandid",
+                        "image": ""
+                    },
+                    {
+                        "name": "Samsung",
+                        "id": "12",
+                        "type": "brandid",
+                        "image": ""
+                    },
+                    {
+                        "name": "LG",
+                        "id": "13",
+                        "type": "brandid",
+                        "image": ""
+                    },
+                    {
+                        "name": "Motorola",
+                        "id": "14",
+                        "type": "brandid",
+                        "image": ""
+                    },
+                    {
+                        "name": "Razer",
+                        "id": "15",
+                        "type": "brandid",
+                        "image": ""
+                    }
+                ]
+            }
+        ]
+    }
+}
