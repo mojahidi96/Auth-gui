@@ -1,1 +1,4 @@
-<p>star-rating works!</p>
+<br><br>
+<i *ngFor="let star of filledStars" class="fa fa-star text-warning" aria-hidden="true"></i>
+<i *ngIf="(rating%1>0)" [ngClass]="{'fa-star-half-o':(rating%1>0)}" class="fa text-warning" aria-hidden="true"></i>
+<i *ngFor="let hstar of hollowStars" class="fa fa-star-o text-warning" aria-hidden="true"></i>
