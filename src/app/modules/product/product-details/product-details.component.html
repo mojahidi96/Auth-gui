@@ -1,41 +1,46 @@
 <div class="container">
     <div class="row mt-4">
+        <div (click)="backToList()" class="btn btn-secondary">Back</div>
+    </div>
+    <div class="row mt-4">
+
         <div class="col-md-6 text-center">
-            <img src="data:image/webp;base64,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"
-                alt="">
+            <img [src]="selectedProduct.images.large_image" alt="">
         </div>
         <div class="col-md-6">
-            <h5 class="card-title">Special title treatment</h5>
-            <star-rating></star-rating>
-            <span class="text-danger font-weight-bold">{{10 | currency:"INR":"symbol"}}</span>
-            <del class="text-secondary font-weight-light">{{15| currency:"INR":"symbol"}}</del>
-            <select name="" id="">
+            <h5 class="card-title">{{selectedProduct.name}}</h5>
+            <star-rating [rating]="selectedProduct.rating"></star-rating>
+            <span class="text-danger font-weight-bold">{{selectedProduct.price | currency:"INR":"symbol"}}</span>
+            <del
+                class="text-secondary font-weight-light pl-2">{{selectedProduct.printedPrice| currency:"INR":"symbol"}}</del>
+            <select name="" id="" class="float-right w-50">
                 <option value="1">Select model</option>
                 <option value="2">model1</option>
                 <option value="3">model2</option>
             </select>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <p class="card-text mt-2">{{selectedProduct.shortDescription}}</p>
             <div class="row mt-4">
-                <a class="btn btn-primary">Add to cart</a>
+                <a class="btn btn-danger" (click)="productService.addToCart(selectedProduct)">Add to cart</a>
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row mt-4">
         <div class="col-md-12 text-center text-secondary">
             <h2 class="font-weight-light">Similar products</h2>
         </div>
     </div>
     <div class="row mt-4 mb-4">
-        <div class="col-sm-3" *ngFor="let col of [1,2,3,4]">
-            <div class="card">
-                <img class="card-img-top p-2"
-                    src="https://images-eu.ssl-images-amazon.com/images/I/41mPjjqqNnL._AC_US160_FMwebp_QL70_.jpg"
-                    alt="Card image cap">
+        <div class="col-sm-3" *ngFor="let recommendedItem of selectedProduct.recommendedItems">
+            <div class="card shadow">
+                <img (click)="selectedProduct = recommendedItem" class="card-img-top p-2"
+                    [src]="recommendedItem.images.large_image" alt="Card image cap">
                 <div class="card-body text-primary">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <span class="text-danger font-weight-bold">{{10 | currency:"INR":"symbol"}}</span>
-                    <del class="text-secondary font-weight-light"> {{15| currency:"INR":"symbol"}}</del>
-                    <star-rating></star-rating>
+                    <h5 class="card-title">{{recommendedItem.name}}</h5>
+                    <span
+                        class="text-danger font-weight-bold">{{recommendedItem.price | currency:"INR":"symbol"}}</span>
+                    <del class="text-secondary font-weight-light">
+                        {{recommendedItem.printedPrice| currency:"INR":"symbol"}}</del>
+                    <star-rating [rating]="recommendedItem.rating"></star-rating>
                 </div>
             </div>
         </div>

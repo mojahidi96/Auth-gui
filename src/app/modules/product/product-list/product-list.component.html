@@ -1,21 +1,23 @@
-<div class="container mb-4">
+<div class="container mb-4" *ngIf="!selectedProduct">
     <div class="row mt-4" *ngFor="let productsRow of products">
         <div class="col-sm-3" *ngFor="let product of productsRow">
-            <div class="card">
-                <img class="card-img-top p-2" style="height: 15.85rem;" [src]="product.images.small_image"
-                    alt="Card image cap">
+            <div class="card shadow">
+                <img (click)="setSelectedProduct(product)" class="card-img-top p-2" style="height: 15.85rem;"
+                    [src]="product.images.small_image" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">{{product.name}}</h5>
-                    <p class="card-text" style="height: 94px;" [title]=product.shortDescription>
-                        {{(product.shortDescription.length>60)?(product.shortDescription | slice:0:60)+'...':product.shortDescription}}
+                    <p class="card-text text-truncate" [title]=product.shortDescription>
+                        {{product.shortDescription}}
                     </p>
                     <span class="text-danger font-weight-bold">{{product.price | currency:"INR":"symbol"}}</span>
                     <del
                         class="text-secondary font-weight-light pl-2">{{product.printedPrice | currency:"INR":"symbol"}}</del>
-                        <star-rating [rating]="product.rating"></star-rating>
-                    <a class="btn btn-danger float-right">Add to cart</a>
+                    <star-rating [rating]="product.rating"></star-rating>
+                    <a class="btn btn-danger float-right" (click)="productService.addToCart(product)">Add to cart</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<app-product-details *ngIf="selectedProduct" (backToListevent)="selectedProduct=null"
+    [selectedProduct]="selectedProduct"></app-product-details>

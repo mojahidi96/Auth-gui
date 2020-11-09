@@ -12,7 +12,9 @@ export class StarRatingComponent implements OnInit {
   filledStars
   hollowStars
   ngOnInit(): void {
-    this.generateStarsByRating(this.rating);
+    if (this.rating) {
+      this.generateStarsByRating(this.rating);
+    }
   }
 
   generateStarsByRating(rating) {

@@ -14,18 +14,22 @@
                 <a class="nav-link" routerLink="/about">About</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Shop</a>
+                <a class="nav-link" routerLink="/product/list">Shop</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Help</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Your cart</a>
+                <a class="badge badge-secondary pr-3" routerLink="/product/cart">
+                    <em class="nav-link fa fa-shopping-cart text-white" style="font-size: 1rem;"></em>
+                    <h2 class='badge badge-pill badge-primary badge-pos align-top'> {{cartCount}} </h2>
+                    <span class="text-white pl-2">Your cart</span>
+                </a>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <input class="form-control mr-sm-2" type="search" (input)="updateSearch($event.target.value)"
+                placeholder="Search" aria-label="Search">
         </form>
     </div>
 </nav>

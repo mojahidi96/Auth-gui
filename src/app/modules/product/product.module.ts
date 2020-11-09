@@ -6,11 +6,10 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { ProductComponent } from './product/product.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { StarRatingComponent } from './star-rating/star-rating.component';
-
-
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 @NgModule({
-  declarations: [ProductListComponent, ProductDetailsComponent, ProductComponent, StarRatingComponent],
+  declarations: [ProductListComponent, ProductDetailsComponent, ProductComponent, StarRatingComponent, ShoppingCartComponent],
   imports: [
     CommonModule,
     ProductRoutingModule,

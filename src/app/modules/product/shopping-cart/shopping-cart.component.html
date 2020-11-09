@@ -1,0 +1,65 @@
+<div class="container text-muted">
+    <div class="row mt-4 text-center">
+        <div class="col col-sm-4  p-2 font-weight-bold border-bottom border-dark">1. Shopping Cart</div>
+        <div class="col col-sm-4  p-2 border-bottom border-secondary">2. Shopping Details</div>
+        <div class="col col-sm-4  p-2 border-bottom border-secondary">3. Payment Options</div>
+    </div>
+    <div class="row mt-4 bg-white">
+        <div class="col px-4 col-sm-8">
+            <h5 class="py-2 mt-4 border-bottom border-secondary">Shopping Cart</h5>
+            <div class="scroll mt-4">
+                <div class="card pr-4 shadow mb-2" *ngFor="let item of items; let index=index">
+                    <div class="card-body">
+                        <div class="row ">
+                            <div class="col col-sm-3 border border-secondary">Image</div>
+                            <div class="col col-sm-6">
+                                <span class="text-uppercase font-weight-bold">{{item.name}}</span>
+                                <p class="text-truncate" [title]="item.shortDescription">{{item.shortDescription}}</p>
+                                <span>{{item.price | currency:"INR":"symbol"}}</span>
+                            </div>
+                            <div class="col col-sm-3">
+                                <div class="align-text-middle text-center py-4 border border-secondary rounded"
+                                    style="font-size: 1.5rem;">
+                                    <em class="fa fa-minus-circle px-2" (click)="decrementQty(index)"></em>
+                                    {{item.quantity}}
+                                    <em class="fa fa-plus-circle px-2" (click)="incrementQty(index)"></em>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4 mb-4">
+                <div class="col col-md-4">
+                    <button class="btn btn-secondary px-4 mr-2" type="submit">Next</button>
+                    <button class="btn btn-light px-4" type="button" (click)="cancel()">Cancel</button>
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm-4">
+            <h5 class="py-2 mt-4 border-bottom border-secondary">Summary</h5>
+            <div class="row py-2 border-bottom border-secondary">
+                <div class="col col-sm-7 text-uppercase font-weight-bold">Enter coupon code</div>
+                <div class="col col-sm-5 text-right"><input style="width: 100%;" type="text" name="code" id="code">
+                </div>
+            </div>
+            <div class="row py-2">
+                <div class="col col-sm-6 text-uppercase">Subtotal</div>
+                <div class="col col-sm-6 text-right">{{getTotal()|currency:'INR'}}</div>
+            </div>
+            <div class="row py-2">
+                <div class="col col-sm-6 text-uppercase">Shipping</div>
+                <div class="col col-sm-6 text-right">Free</div>
+            </div>
+            <div class="row py-2">
+                <div class="col col-sm-6 text-uppercase">Taxes</div>
+                <div class="col col-sm-6 text-right">{{tax|currency:'INR':'symbol'}}</div>
+            </div>
+            <div class="row border-top border-secondary py-2">
+                <div class="col col-sm-6 font-weight-bold text-uppercase">Total</div>
+                <div class="col col-sm-6 text-right font-weight-bold">{{getGrandTotal()|currency:'INR':'symbol'}}</div>
+            </div>
+        </div>
+    </div>
