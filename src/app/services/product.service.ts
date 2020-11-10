@@ -23,8 +23,24 @@ export class ProductService {
       cartItem.quantity++;
       cartItem.cost = parseFloat(item.price) * cartItem.quantity;
     }
-    let cartCount = this.cartList.reduce((a, b) => ({ quantity: a.quantity + b.quantity }));
-    this._cartSubject.next(cartCount.quantity);
+    this.setCartCount();
     localStorage.setItem('cart', JSON.stringify(this.cartList))
+  }
+
+  removeFromCart(index) {
+    let quantity = this.cartList[index].quantity;
+    if (quantity > 1) {
+      this.cartList[index].quantity--;
+    } else {
+      this.cartList.splice(index, 1);
+    }
+    this.setCartCount();
+  }
+
+  private setCartCount() {
+    if (this.cartList.length > 0) {
+      let cartCount = this.cartList.reduce((a, b) => ({ quantity: a.quantity + b.quantity }));
+      this._cartSubject.next(cartCount.quantity);
+    }
   }
 }

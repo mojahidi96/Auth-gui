@@ -7,11 +7,11 @@
     <div class="row mt-4 bg-white">
         <div class="col px-4 col-sm-8">
             <h5 class="py-2 mt-4 border-bottom border-secondary">Shopping Cart</h5>
-            <div class="scroll mt-4">
-                <div class="card pr-4 shadow mb-2" *ngFor="let item of items; let index=index">
+            <div *ngIf="false" class="scroll mt-4">
+                <div class="card shadow mb-2" *ngFor="let item of items; let index=index">
                     <div class="card-body">
                         <div class="row ">
-                            <div class="col col-sm-3 border border-secondary">Image</div>
+                            <div class="col col-sm-2 border border-secondary">Image</div>
                             <div class="col col-sm-6">
                                 <span class="text-uppercase font-weight-bold">{{item.name}}</span>
                                 <p class="text-truncate" [title]="item.shortDescription">{{item.shortDescription}}</p>
@@ -23,13 +23,110 @@
                                     <em class="fa fa-minus-circle px-2" (click)="decrementQty(index)"></em>
                                     {{item.quantity}}
                                     <em class="fa fa-plus-circle px-2" (click)="incrementQty(index)"></em>
-
                                 </div>
                             </div>
+                            <div class="col col-sm-1">
+                                <div class="py-4" style="font-size: 1.5rem;"
+                                    (click)="productService.cartList[index].quantity = 1;decrementQty(index)">
+                                    <em class="fa fa-trash"></em>
+                                </div>
+                            </div>
+
                         </div>
 
                     </div>
                 </div>
+            </div>
+            <form *ngIf="false" class="mt-4">
+                <div class="form-row">
+                    <div class="col col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="firstName" id="firstName" class="form-control"
+                                placeholder="First name"></div>
+                    </div>
+                    <div class="col col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="lastName" id="lastName" class="form-control"
+                                placeholder="Last name"></div>
+                    </div>
+                </div>
+                <div class="form-group"><input type="text" class="form-control" id="address" placeholder="Address">
+                </div>
+                <div class="form-group"><input type="text" class="form-control" id="address" placeholder="Address2">
+                </div>
+                <div class="form-row">
+                    <div class="col col-md-6">
+                        <select name="country" id="country" class="form-control" placeholder="Country">
+                            <option selected disabled>--Country--</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+                    <div class="col col-md-6">
+                        <div class="form-group"><input type="text" class="form-control" placeholder="City"></div>
+                    </div>
+                </div>
+                <div class="form-row border-bottom border-secondary">
+                    <div class="col col-md-6">
+                        <div class="form-group"><input type="text" class="form-control" placeholder="Zip/Postal Code">
+                        </div>
+                    </div>
+                    <div class="col col-md-6">
+                        <div class="form-group"><input type="text" class="form-control" placeholder="Phone Number">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row mt-4">
+                    <div class="col col-md-6">
+                        <div
+                            class="custom-control custom-radio border border-secondary rounded text-center p-2 bg-light">
+                            <input checked type="radio" id="freeshipping" name="freeshipping"
+                                class="custom-control-input">
+                            <label class="custom-control-label font-weight-bold" for="freeshipping">Free shipping
+                                <p class="font-weight-light"> Between 2-5 working days</p></label>
+                        </div>
+                    </div>
+                    <div class="col col-md-6">
+                        <div class="custom-control custom-radio border border-secondary rounded text-center p-2">
+                            <input type="radio" id="nextDay" name="freeshipping" class="custom-control-input">
+                            <label class="custom-control-label font-weight-bold" for="nextDay">Next Day Delivery - 20
+                                <p class="font-weight-light">24 hours from checkout</p></label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="mt-4 mb-4">
+                <form>
+                    <div class="border border-secondary rounded bg-light p-3">
+                        <input checked type="radio" id="freeshipping" name="freeshipping">
+                        <label class="font-weight-bold pl-3" for="freeshipping">Credit Card
+                            <p class="font-weight-light"> Between 2-5 working days</p></label>
+                        <div class="form-row">
+                            <div class="col col-md-7">
+                                <div class="form-group"><input type="text" class="form-control"
+                                        placeholder="Card Number">
+                                </div>
+                            </div>
+                            <div class="col col-md-3">
+                                <div class="form-group"><input type="text" class="form-control" placeholder="MM/YY">
+                                </div>
+                            </div>
+                            <div class="col col-md-2">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="CVV">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group"><input type="text" class="form-control" placeholder="Card Holder Name">
+                        </div>
+                    </div>
+                    <div class="border border-secondary rounded mt-4 p-3">
+                        <input type="radio" id="nextDay" name="freeshipping">
+                        <label class="font-weight-bold pl-3" for="nextDay">Paypal
+                            <p class="font-weight-light">24 hours from checkout</p></label>
+                    </div>
+                </form>
             </div>
             <div class="row mt-4 mb-4">
                 <div class="col col-md-4">

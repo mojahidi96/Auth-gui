@@ -19,8 +19,8 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">Help</a>
             </li>
-            <li class="nav-item">
-                <a class="badge badge-secondary pr-3" routerLink="/product/cart">
+            <li class="nav-item" *ngIf="cartCount>0">
+                <a class="badge badge-secondary pr-3" (click)="router.navigateByUrl('/product/cart')">
                     <em class="nav-link fa fa-shopping-cart text-white" style="font-size: 1rem;"></em>
                     <h2 class='badge badge-pill badge-primary badge-pos align-top'> {{cartCount}} </h2>
                     <span class="text-white pl-2">Your cart</span>
