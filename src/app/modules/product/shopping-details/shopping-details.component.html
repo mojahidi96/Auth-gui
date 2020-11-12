@@ -53,9 +53,8 @@
         <div class="col col-md-6">
             <div [ngClass]="{'bg-light':shoppingDetailsControl.shipping.value === 'freeshipping'}"
                 class="custom-control custom-radio border border-secondary rounded text-center p-2">
-                <input checked type="radio" value="freeshipping"
-                    [checked]="shoppingDetailsControl.shipping.value === 'freeshipping'" id="freeshipping"
-                    name="shipping" formControlName="shipping" class="custom-control-input">
+                <input checked type="radio" value="freeshipping" id="freeshipping" name="shipping"
+                    formControlName="shipping" class="custom-control-input">
                 <label class="custom-control-label font-weight-bold" for="freeshipping">Free shipping
                     <p class="font-weight-light"> Between 2-5 working days</p></label>
             </div>
@@ -63,9 +62,8 @@
         <div class="col col-md-6">
             <div [ngClass]="{'bg-light':shoppingDetailsControl.shipping.value === 'paidShipping'}"
                 class="custom-control custom-radio border border-secondary rounded text-center p-2">
-                <input type="radio" value="paidShipping" id="nextDay"
-                    [checked]="shoppingDetailsControl.shipping.value === 'paidShipping'" name="shipping"
-                    formControlName="shipping" class="custom-control-input">
+                <input type="radio" value="paidShipping" id="nextDay" name="shipping" formControlName="shipping"
+                    class="custom-control-input">
                 <label class="custom-control-label font-weight-bold" for="nextDay">Next Day Delivery - 20
                     <p class="font-weight-light">24 hours from checkout</p></label>
             </div>

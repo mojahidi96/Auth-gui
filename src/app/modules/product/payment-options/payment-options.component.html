@@ -1,8 +1,8 @@
-<div class="mt-4 mb-4">
-    <form>
-        <div class="border border-secondary rounded bg-light p-3">
-            <input checked type="radio" id="freeshipping" name="paypal">
-            <label class="font-weight-bold pl-3" for="freeshipping">Credit/Debit Card
+<div class="mt-3 mb-4">
+    <form [formGroup]="paymentForm">
+        <div [ngClass]="{'bg-light':paymentControl.paymentmethod.value === 'card'}" class="border border-secondary rounded bg-light p-3">
+            <input checked type="radio" id="card" value="card" name="paymentmethod" formControlName="paymentmethod">
+            <label class="font-weight-bold pl-3" for="card">Credit/Debit Card
                 <p class="font-weight-light"> Between 2-5 working days</p></label>
             <div class="form-row">
                 <div class="col col-md-7">
@@ -22,12 +22,18 @@
             <div class="form-group"><input type="text" class="form-control" placeholder="Card Holder Name">
             </div>
         </div>
-        <div class="border border-secondary rounded mt-4 p-3">
-            <input type="radio" id="paypal" name="paypal">
-            <label class="font-weight-bold pl-3" for="paypal">Net Banking</label>
+        <div [ngClass]="{'bg-light':paymentControl.paymentmethod.value === 'upi'}" class="border border-secondary rounded mt-2 px-3 py-1">
+            <input type="radio" id="upi" value="upi" name="paymentmethod" formControlName="paymentmethod">
+            <label class="font-weight-bold pl-3" for="upi">UPI</label>
         </div>
-        <div class="border border-secondary rounded mt-4 p-3">
-            <input type="radio" id="cod" name="paypal">
+        <div [ngClass]="{'bg-light':paymentControl.paymentmethod.value === 'netbanking'}"
+            class="border border-secondary rounded mt-2 px-3 py-1">
+            <input type="radio" id="netBanking" value="netbanking" name="paymentmethod" formControlName="paymentmethod">
+            <label class="font-weight-bold pl-3" for="netBanking">Net Banking</label>
+        </div>
+        <div [ngClass]="{'bg-light':paymentControl.paymentmethod.value === 'cod'}"
+            class="border border-secondary rounded mt-2 px-3 py-1">
+            <input type="radio" id="cod" value="cod" name="paymentmethod" formControlName="paymentmethod">
             <label class="font-weight-bold pl-3" for="cod">Cash on Delivery </label>
         </div>
     </form>

@@ -10,7 +10,7 @@ import { tabsName } from '../product.constant';
 })
 export class ShoppingCartComponent implements OnInit {
   items: any[];
-  currentTab: string = tabsName.shoppingCart;
+  currentTab: string = tabsName.shoppingDetails;
   tabsName = tabsName;
   tabs: any[]
   constructor(public productService: ProductService, private router: Router) { }
