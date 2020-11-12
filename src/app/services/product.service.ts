@@ -38,9 +38,7 @@ export class ProductService {
   }
 
   private setCartCount() {
-    if (this.cartList.length > 0) {
-      let cartCount = this.cartList.reduce((a, b) => ({ quantity: a.quantity + b.quantity }));
-      this._cartSubject.next(cartCount.quantity);
-    }
+    let cartCount = (this.cartList.length > 0) ? this.cartList.reduce((a, b) => ({ quantity: a.quantity + b.quantity })).quantity : 0;
+    this._cartSubject.next(cartCount);
   }
 }

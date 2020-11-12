@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormArray, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CustomValidators } from 'src/app/custom-validators';
 import { UsersService } from 'src/app/services/users.service';
 import { UtilService } from 'src/app/services/util';
@@ -58,6 +58,6 @@ export class RegisterComponent implements OnInit {
       })
     }
   }
-  
+
 
 }

@@ -2,22 +2,25 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { FilterPipe } from 'src/app/pipes/filter.pipe';
 import { ProductService } from 'src/app/services/product.service';
-import product from '../../../../mock-json/product.json'
+import product from '../../../../mock-json/product.json';
+
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit, OnDestroy {
-
-  constructor(public productService: ProductService) { }
   products
   selectedProduct
   txtSearch;
   rowProductList = product.ProductCatalogResponse.ProductList.product;
+  private _searchSubscription: any;
+
+  constructor(public productService: ProductService) { }
+
   ngOnInit(): void {
     this.products = this.generateRows(product.ProductCatalogResponse.ProductList.product);
-    this.productService._searchSubject.pipe(debounceTime(500), distinctUntilChanged()).subscribe(text => {
+    this._searchSubscription = this.productService._searchSubject.pipe(debounceTime(500), distinctUntilChanged()).subscribe(text => {
       this.filterProduct(text);
     });
   }
@@ -38,10 +41,10 @@ export class ProductListComponent implements OnInit, OnDestroy {
   filterProduct(searchText) {
     const filterPipe = new FilterPipe();
     this.products = this.generateRows(filterPipe.transform(this.rowProductList, searchText));
-  } 
+  }
 
   ngOnDestroy() {
-    this.productService._searchSubject.unsubscribe();
+    if (!!this._searchSubscription) this._searchSubscription.unsubscribe();
   }
 
 }

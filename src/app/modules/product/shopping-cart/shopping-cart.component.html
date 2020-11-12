@@ -1,16 +1,20 @@
 <div class="container text-muted">
     <div class="row mt-4 text-center">
-        <div class="col col-sm-4  p-2 font-weight-bold border-bottom border-dark">1. Shopping Cart</div>
-        <div class="col col-sm-4  p-2 border-bottom border-secondary">2. Shopping Details</div>
-        <div class="col col-sm-4  p-2 border-bottom border-secondary">3. Payment Options</div>
+        <div *ngFor="let tab of tabs; let i=index" [ngClass]="{'font-weight-bold':tab.label==currentTab}"
+            class="col col-sm-4 p-2 border-bottom border-secondary">
+            <i *ngIf="tab.isComplete" class="fa fa-check-circle-o align-bottom" style="font-size: 1.5rem;"
+                aria-hidden="true"></i>
+            <span *ngIf="!tab.isComplete" class="align-bottom">{{(i+1)}}.</span>
+            {{tab.label}}
+        </div>
     </div>
     <div class="row mt-4 bg-white">
-        <div class="col px-4 col-sm-8">
-            <h5 class="py-2 mt-4 border-bottom border-secondary">Shopping Cart</h5>
-            <div *ngIf="false" class="scroll mt-4">
+        <div class="col px-4 col-sm-8" [ngSwitch]="currentTab">
+            <h5 class="py-2 mt-4 border-bottom border-secondary">{{currentTab}}</h5>
+            <div *ngSwitchCase="tabsName.shoppingCart" class="scroll mt-4">
                 <div class="card shadow mb-2" *ngFor="let item of items; let index=index">
                     <div class="card-body">
-                        <div class="row ">
+                        <div class="row">
                             <div class="col col-sm-2 border border-secondary">Image</div>
                             <div class="col col-sm-6">
                                 <span class="text-uppercase font-weight-bold">{{item.name}}</span>
@@ -37,126 +41,21 @@
                     </div>
                 </div>
             </div>
-            <form *ngIf="false" class="mt-4">
-                <div class="form-row">
-                    <div class="col col-md-6">
-                        <div class="form-group">
-                            <input type="text" name="firstName" id="firstName" class="form-control"
-                                placeholder="First name"></div>
-                    </div>
-                    <div class="col col-md-6">
-                        <div class="form-group">
-                            <input type="text" name="lastName" id="lastName" class="form-control"
-                                placeholder="Last name"></div>
-                    </div>
-                </div>
-                <div class="form-group"><input type="text" class="form-control" id="address" placeholder="Address">
-                </div>
-                <div class="form-group"><input type="text" class="form-control" id="address" placeholder="Address2">
-                </div>
-                <div class="form-row">
-                    <div class="col col-md-6">
-                        <select name="country" id="country" class="form-control" placeholder="Country">
-                            <option selected disabled>--Country--</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                        </select>
-                    </div>
-                    <div class="col col-md-6">
-                        <div class="form-group"><input type="text" class="form-control" placeholder="City"></div>
-                    </div>
-                </div>
-                <div class="form-row border-bottom border-secondary">
-                    <div class="col col-md-6">
-                        <div class="form-group"><input type="text" class="form-control" placeholder="Zip/Postal Code">
-                        </div>
-                    </div>
-                    <div class="col col-md-6">
-                        <div class="form-group"><input type="text" class="form-control" placeholder="Phone Number">
-                        </div>
-                    </div>
-                </div>
-                <div class="form-row mt-4">
-                    <div class="col col-md-6">
-                        <div
-                            class="custom-control custom-radio border border-secondary rounded text-center p-2 bg-light">
-                            <input checked type="radio" id="freeshipping" name="freeshipping"
-                                class="custom-control-input">
-                            <label class="custom-control-label font-weight-bold" for="freeshipping">Free shipping
-                                <p class="font-weight-light"> Between 2-5 working days</p></label>
-                        </div>
-                    </div>
-                    <div class="col col-md-6">
-                        <div class="custom-control custom-radio border border-secondary rounded text-center p-2">
-                            <input type="radio" id="nextDay" name="freeshipping" class="custom-control-input">
-                            <label class="custom-control-label font-weight-bold" for="nextDay">Next Day Delivery - 20
-                                <p class="font-weight-light">24 hours from checkout</p></label>
-                        </div>
-                    </div>
-                </div>
-            </form>
-            <div class="mt-4 mb-4">
-                <form>
-                    <div class="border border-secondary rounded bg-light p-3">
-                        <input checked type="radio" id="freeshipping" name="freeshipping">
-                        <label class="font-weight-bold pl-3" for="freeshipping">Credit Card
-                            <p class="font-weight-light"> Between 2-5 working days</p></label>
-                        <div class="form-row">
-                            <div class="col col-md-7">
-                                <div class="form-group"><input type="text" class="form-control"
-                                        placeholder="Card Number">
-                                </div>
-                            </div>
-                            <div class="col col-md-3">
-                                <div class="form-group"><input type="text" class="form-control" placeholder="MM/YY">
-                                </div>
-                            </div>
-                            <div class="col col-md-2">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="CVV">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group"><input type="text" class="form-control" placeholder="Card Holder Name">
-                        </div>
-                    </div>
-                    <div class="border border-secondary rounded mt-4 p-3">
-                        <input type="radio" id="nextDay" name="freeshipping">
-                        <label class="font-weight-bold pl-3" for="nextDay">Paypal
-                            <p class="font-weight-light">24 hours from checkout</p></label>
-                    </div>
-                </form>
-            </div>
+            <ng-container *ngSwitchCase="tabsName.shoppingDetails">
+                <app-shopping-details></app-shopping-details>
+            </ng-container>
+            <ng-container *ngSwitchCase="tabsName.paymentOptions">
+                <app-payment-options></app-payment-options>
+            </ng-container>
             <div class="row mt-4 mb-4">
                 <div class="col col-md-4">
-                    <button class="btn btn-secondary px-4 mr-2" type="submit">Next</button>
+                    <button class="btn btn-secondary px-4 mr-2" type="button"
+                        (click)="next()">{{tabsName.paymentOptions==currentTab?'Pay Now':'Next'}}</button>
                     <button class="btn btn-light px-4" type="button" (click)="cancel()">Cancel</button>
                 </div>
             </div>
         </div>
         <div class="col col-sm-4">
-            <h5 class="py-2 mt-4 border-bottom border-secondary">Summary</h5>
-            <div class="row py-2 border-bottom border-secondary">
-                <div class="col col-sm-7 text-uppercase font-weight-bold">Enter coupon code</div>
-                <div class="col col-sm-5 text-right"><input style="width: 100%;" type="text" name="code" id="code">
-                </div>
-            </div>
-            <div class="row py-2">
-                <div class="col col-sm-6 text-uppercase">Subtotal</div>
-                <div class="col col-sm-6 text-right">{{getTotal()|currency:'INR'}}</div>
-            </div>
-            <div class="row py-2">
-                <div class="col col-sm-6 text-uppercase">Shipping</div>
-                <div class="col col-sm-6 text-right">Free</div>
-            </div>
-            <div class="row py-2">
-                <div class="col col-sm-6 text-uppercase">Taxes</div>
-                <div class="col col-sm-6 text-right">{{tax|currency:'INR':'symbol'}}</div>
-            </div>
-            <div class="row border-top border-secondary py-2">
-                <div class="col col-sm-6 font-weight-bold text-uppercase">Total</div>
-                <div class="col col-sm-6 text-right font-weight-bold">{{getGrandTotal()|currency:'INR':'symbol'}}</div>
-            </div>
+            <app-summary [isShoppingCartTab]="!(currentTab==tabsName.shoppingCart)" [items]="items"></app-summary>
         </div>
     </div>

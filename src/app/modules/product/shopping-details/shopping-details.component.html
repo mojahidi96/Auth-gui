@@ -1,0 +1,74 @@
+<form [formGroup]="shoppingDetailsForm" class="mt-4">
+    <div class="form-row">
+        <div class="col col-md-6">
+            <div class="form-group">
+                <input type="text" name="firstName" id="firstName" formControlName="firstName" class="form-control"
+                    placeholder="First name"></div>
+        </div>
+        <div class="col col-md-6">
+            <div class="form-group">
+                <input type="text" name="lastName" id="lastName" formControlName="lastName" class="form-control"
+                    placeholder="Last name"></div>
+        </div>
+    </div>
+    <div class="form-group"><input type="text" class="form-control" formControlName="address" id="address"
+            placeholder="Address">
+    </div>
+    <div class="form-group"><input type="text" class="form-control" formControlName="street" id="address2"
+            placeholder="Address2">
+    </div>
+    <div class="form-row">
+        <div class="col col-md-6">
+            <select (change)="selectedCountry = $event.target.value" formControlName="country" name="country"
+                id="country" class="form-control" placeholder="Country">
+                <option selected disabled>--Country--</option>
+                <option *ngFor="let country of countries" [value]="country.country">{{country.country}}</option>
+            </select>
+        </div>
+        <div class="col col-md-6">
+            <div class="form-group">
+                <input *ngIf="!cities[selectedCountry]" formControlName="city" type="text" class="form-control"
+                    id="cityText" placeholder="City">
+                <select *ngIf="cities[selectedCountry]" formControlName="city" name="city" id="city"
+                    class="form-control" placeholder="City">
+                    <option selected disabled>--City--</option>
+                    <option *ngFor="let city of cities[selectedCountry]" [value]="city">{{city}}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="form-row border-bottom border-secondary">
+        <div class="col col-md-6">
+            <div class="form-group"><input type="text" formControlName="zip" class="form-control"
+                    placeholder="Zip/Postal Code">
+            </div>
+        </div>
+        <div class="col col-md-6">
+            <div class="form-group"><input type="text" formControlName="phoneNumber" class="form-control"
+                    placeholder="Phone Number">
+            </div>
+        </div>
+    </div>
+    <div class="form-row mt-4">
+        <div class="col col-md-6">
+            <div [ngClass]="{'bg-light':shoppingDetailsControl.shipping.value === 'freeshipping'}"
+                class="custom-control custom-radio border border-secondary rounded text-center p-2">
+                <input checked type="radio" value="freeshipping"
+                    [checked]="shoppingDetailsControl.shipping.value === 'freeshipping'" id="freeshipping"
+                    name="shipping" formControlName="shipping" class="custom-control-input">
+                <label class="custom-control-label font-weight-bold" for="freeshipping">Free shipping
+                    <p class="font-weight-light"> Between 2-5 working days</p></label>
+            </div>
+        </div>
+        <div class="col col-md-6">
+            <div [ngClass]="{'bg-light':shoppingDetailsControl.shipping.value === 'paidShipping'}"
+                class="custom-control custom-radio border border-secondary rounded text-center p-2">
+                <input type="radio" value="paidShipping" id="nextDay"
+                    [checked]="shoppingDetailsControl.shipping.value === 'paidShipping'" name="shipping"
+                    formControlName="shipping" class="custom-control-input">
+                <label class="custom-control-label font-weight-bold" for="nextDay">Next Day Delivery - 20
+                    <p class="font-weight-light">24 hours from checkout</p></label>
+            </div>
+        </div>
+    </div>
+</form>
