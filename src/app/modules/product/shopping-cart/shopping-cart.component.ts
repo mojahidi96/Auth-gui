@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductService } from 'src/app/services/product.service';
 import { tabsName } from '../product.constant';
+import { ShoppingDetailsComponent } from '../shopping-details/shopping-details.component';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -10,9 +11,12 @@ import { tabsName } from '../product.constant';
 })
 export class ShoppingCartComponent implements OnInit {
   items: any[];
-  currentTab: string = tabsName.shoppingDetails;
+  currentTab: string = tabsName.shoppingCart;
   tabsName = tabsName;
   tabs: any[]
+
+  @ViewChild(ShoppingDetailsComponent) shoppingDetails: ShoppingDetailsComponent;
+
   constructor(public productService: ProductService, private router: Router) { }
 
 
@@ -40,10 +44,17 @@ export class ShoppingCartComponent implements OnInit {
     }
   }
 
-  next() {
+  next(isFormValid?) {
+    if (this.shoppingDetails) {
+      isFormValid ? this.nextTab() : this.shoppingDetails.submitForm();
+    } else {
+      this.nextTab();
+    }
+  }
+
+  nextTab() {
     let currentTabIndex = this.tabs.indexOf(this.tabs.find(tab => tab.label == this.currentTab));
     let local = ((this.tabs.length - 1) > currentTabIndex) ? (this.tabs[currentTabIndex].isComplete = true, this.currentTab = this.tabs[currentTabIndex + 1].label) : this.payNow();
-    console.log(local);
   }
 
   payNow() {

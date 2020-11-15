@@ -42,7 +42,7 @@
                 </div>
             </div>
             <ng-container *ngSwitchCase="tabsName.shoppingDetails">
-                <app-shopping-details></app-shopping-details>
+                <app-shopping-details (emitToNext)="next($event)"></app-shopping-details>
             </ng-container>
             <ng-container *ngSwitchCase="tabsName.paymentOptions">
                 <app-payment-options></app-payment-options>

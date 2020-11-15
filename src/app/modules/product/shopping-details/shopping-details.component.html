@@ -3,16 +3,28 @@
         <div class="col col-md-6">
             <div class="form-group">
                 <input type="text" name="firstName" id="firstName" formControlName="firstName" class="form-control"
-                    placeholder="First name"></div>
+                    [ngClass]="{'is-invalid':shoppingDetailsControl.firstName?.dirty && shoppingDetailsControl.firstName?.errors}"
+                    placeholder="First name">
+                <div *ngIf="shoppingDetailsControl.firstName.hasError('required')" class="invalid-feedback">
+                    First name is required</div>
+            </div>
         </div>
         <div class="col col-md-6">
             <div class="form-group">
                 <input type="text" name="lastName" id="lastName" formControlName="lastName" class="form-control"
-                    placeholder="Last name"></div>
+                    [ngClass]="{'is-invalid':shoppingDetailsControl.lastName?.dirty && shoppingDetailsControl.lastName?.errors}"
+                    placeholder="Last name">
+                <div *ngIf="shoppingDetailsControl.lastName.hasError('required')" class="invalid-feedback">
+                    Last name is required</div>
+            </div>
         </div>
     </div>
-    <div class="form-group"><input type="text" class="form-control" formControlName="address" id="address"
+    <div class="form-group">
+        <input type="text" class="form-control" formControlName="address" id="address"
+            [ngClass]="{'is-invalid':shoppingDetailsControl.address?.dirty && shoppingDetailsControl.address?.errors}"
             placeholder="Address">
+        <div *ngIf="shoppingDetailsControl.address.hasError('required')" class="invalid-feedback">
+            Address is required</div>
     </div>
     <div class="form-group"><input type="text" class="form-control" formControlName="street" id="address2"
             placeholder="Address2">
@@ -20,32 +32,51 @@
     <div class="form-row">
         <div class="col col-md-6">
             <select (change)="selectedCountry = $event.target.value" formControlName="country" name="country"
-                id="country" class="form-control" placeholder="Country">
-                <option selected disabled>--Country--</option>
+                id="country" class="form-control"
+                [ngClass]="{'is-invalid':shoppingDetailsControl.country?.dirty && shoppingDetailsControl.country?.errors}"
+                placeholder="Country">
+                <option selected disabled>Select country</option>
                 <option *ngFor="let country of countries" [value]="country.country">{{country.country}}</option>
             </select>
+            <div *ngIf="shoppingDetailsControl.country.hasError('required')" class="invalid-feedback">
+                Select country</div>
         </div>
         <div class="col col-md-6">
             <div class="form-group">
                 <input *ngIf="!cities[selectedCountry]" formControlName="city" type="text" class="form-control"
-                    id="cityText" placeholder="City">
+                    id="cityText"
+                    [ngClass]="{'is-invalid':shoppingDetailsControl.city?.dirty && shoppingDetailsControl.city?.errors}"
+                    placeholder="City">
                 <select *ngIf="cities[selectedCountry]" formControlName="city" name="city" id="city"
-                    class="form-control" placeholder="City">
+                    class="form-control"
+                    [ngClass]="{'is-invalid':shoppingDetailsControl.city?.dirty && shoppingDetailsControl.city?.errors}"
+                    placeholder="City">
                     <option selected disabled>--City--</option>
                     <option *ngFor="let city of cities[selectedCountry]" [value]="city">{{city}}</option>
                 </select>
+                <div *ngIf="shoppingDetailsControl.city.hasError('required')" class="invalid-feedback">
+                    Select city</div>
             </div>
         </div>
     </div>
     <div class="form-row border-bottom border-secondary">
         <div class="col col-md-6">
             <div class="form-group"><input type="text" formControlName="zip" class="form-control"
+                    [ngClass]="{'is-invalid':shoppingDetailsControl.zip?.dirty && shoppingDetailsControl.zip?.errors}"
                     placeholder="Zip/Postal Code">
+                <div *ngIf="shoppingDetailsControl.city.hasError('required')" class="invalid-feedback">
+                    Zip/Postal Code is required</div>
             </div>
         </div>
         <div class="col col-md-6">
             <div class="form-group"><input type="text" formControlName="phoneNumber" class="form-control"
+                    [ngClass]="{'is-invalid':shoppingDetailsControl.phoneNumber?.dirty && shoppingDetailsControl.phoneNumber?.errors}"
                     placeholder="Phone Number">
+                <div *ngIf="shoppingDetailsControl.phoneNumber.hasError('required')" class="invalid-feedback">
+                    Phone Number is required</div>
+                <div *ngIf="shoppingDetailsControl.phoneNumber.hasError('minLength')" class="invalid-feedback">
+                    Invalid phone number</div>
+
             </div>
         </div>
     </div>
